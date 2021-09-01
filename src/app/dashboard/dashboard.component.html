@@ -1,0 +1,75 @@
+<div class="container-fluid page">
+    <div class="d-flex page__box p-3 mt-2">Quản lý nhập hàng</div>
+    <div class="page__content shadow p-3 position-relative">
+        <div class="row">
+            <div class="col-md-12">
+                <form class="form-control mt-3" *ngIf="isShowForm">
+                    <div class="row">
+                        <div class="col-md-6" *ngIf="!isUpdate">
+                            <label class="form-label">Mã phiếu</label>
+                            <input type="text" class="form-control" placeholder="Nhập mã phiếu" [(ngModel)]="Map"
+                                [ngModelOptions]="{standalone:true}">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Sản phẩm</label>
+                            <input type="text" class="form-control" placeholder="Nhập tên sản phẩm"
+                                [(ngModel)]="Sanpham" [ngModelOptions]="{standalone:true}">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Ngày tạo</label>
+                            <input type="text" class="form-control" placeholder="Nhập ngày tạo" [(ngModel)]="Ngaytao"
+                                [ngModelOptions]="{standalone:true}">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Số Lượng</label>
+                            <input type="text" class="form-control" placeholder="Nhập số lượng" [(ngModel)]="Soluong"
+                                [ngModelOptions]="{standalone:true}">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Gía bán</label>
+                            <input type="text" class="form-control" placeholder="Nhập tên nv" [(ngModel)]="Giaban"
+                                [ngModelOptions]="{standalone:true}">
+                        </div>
+                    </div>
+                    <div style="margin-top: 10px">
+                        <button type="button" class="btn btn-primary me-2" (click)="addBook()">Cập Nhật</button>
+                        <button type="button" class="btn btn-danger" (click)="isShowForm=false"> Hủy </button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-12">
+                <button type="button" class="btn btn-success mb-3" (click)="isShowForm=true; isAddBook=true;"
+                    *ngIf="!isShowForm">Tạo phiếu nhập hàng</button>
+
+                <table class="table">
+                    <thead class="thead-inverse">
+                        <tr>
+                            <th>Số phiếu</th>
+                            <th>Sản phẩm</th>
+                            <th>Ngày tạo</th>
+                            <th>Số lượng</th>
+                            <th>Giá bán</th>
+                            <th>Thành tiền</th>
+                            <th>Chức năng</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let nv of danhsach_nhanvien">
+                            <td scope="row">{{ nv.Map}}</td>
+                            <td>{{ nv.Sanpham}}</td>
+                            <td>{{ nv.Ngaytao }}</td>
+                            <td>{{ nv.Soluong }}</td>
+                            <td>{{ nv.Giaban }}</td>
+                            <td>{{ nv.kq }}</td>
+                            <td>
+                                <mat-icon type="button" (click)="removeBook(xh.Mapx)">delete</mat-icon>
+                                <mat-icon (click)="updateBook(xh.Mapx)" type="button">edit</mat-icon>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>
