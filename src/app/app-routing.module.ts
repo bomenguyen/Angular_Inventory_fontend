@@ -4,6 +4,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { XuathangComponent } from './xuathang/xuathang.component';
 import { HomeComponent } from './home/home.component';
 import { ProductComponent } from './product/product.component';
+import { ThongkeComponent } from './thongke/thongke.component';
+import { KiemkeComponent } from './kiemke/kiemke.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -11,6 +13,8 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'xuathang', component: XuathangComponent },
   { path: 'product', component: ProductComponent },
+  { path: 'thongke', component: ThongkeComponent },
+  { path: 'kiemke', component: KiemkeComponent },
 ];
 
 @NgModule({

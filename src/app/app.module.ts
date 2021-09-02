@@ -14,9 +14,15 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
+import { MatTableModule } from '@angular/material/table' 
 import { XuathangComponent } from './xuathang/xuathang.component';
 import { ProductComponent } from './product/product.component';
 import { HttpClientModule } from '@angular/common/http';
+// import { ProductPieChartsComponent } from './product-pie-charts/product-pie-charts.component';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { ThongkeComponent } from './thongke/thongke.component';
+import { MatSortModule } from '@angular/material/sort';
+import { KiemkeComponent } from './kiemke/kiemke.component';
 
 @NgModule({
   declarations: [
@@ -27,8 +33,12 @@ import { HttpClientModule } from '@angular/common/http';
     SidenavComponent,
     XuathangComponent,
     ProductComponent,
+    // ProductPieChartsComponent,
+    ThongkeComponent,
+    KiemkeComponent
   ],
   imports: [
+    NgxChartsModule,
     FormsModule,
     BrowserModule,
     AppRoutingModule,
@@ -41,6 +51,9 @@ import { HttpClientModule } from '@angular/common/http';
     MatIconModule,
     MatDividerModule,
     MatListModule,
+    MatTableModule,
+    MatSortModule,
+ 
   ],
   providers: [],
   bootstrap: [AppComponent],

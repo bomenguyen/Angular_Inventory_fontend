@@ -12,8 +12,9 @@
                         </div>
                         <div class="col-md-6">
                             <label class="form-label">Sản phẩm</label>
-                            <input type="text" class="form-control" placeholder="Nhập tên sản phẩm"
-                                [(ngModel)]="Sanpham" [ngModelOptions]="{standalone:true}">
+                            <select [(ngModel)]="Sanpham" class="form-control">
+                                <option *ngFor="let n of danhsach_sp">{{n.Sanpham}}</option>
+                            </select>
                         </div>
                         <div class="col-md-6">
                             <label class="form-label">Ngày tạo</label>

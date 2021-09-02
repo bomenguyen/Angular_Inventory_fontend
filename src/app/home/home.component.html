@@ -1,8 +1,66 @@
 <div class="container-fluid page">
-  <div class="d-flex page__box p-3 mt-2">Home</div>
-  <div class="page__content shadow p-3 position-relative">
-    <div class="page__content-data position-absolute text-center">
-      Home Content Goes Here
+    <div class="d-flex page__box p-3 mt-2">Home</div>
+    <div class="page__content shadow p-3 position-relative">
+        <div class="row">
+            <div class="col-md-12">
+                <ngx-charts-advanced-pie-chart [results]="productSales" [view]="view" [scheme]="colorScheme"
+                    [gradient]="gradient" (select)="onSelect($event)" (activate)="onActivate($event)"
+                    (deactivate)="onDeactivate($event)">
+                </ngx-charts-advanced-pie-chart>
+            </div>
+            <div class="col-md-6">
+                <h1>Best seller</h1>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Sản phẩm</th>
+                            <th scope="col">Số lượng</th>
+                            <th scope="col">Doanh thu</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Canon</td>
+                            <td>3281</td>
+                            <td style="color: red;">85,000,000</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Nikon</td>
+                            <td>6000</td>
+                            <td style="color: red;">97,000,000</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td >Lamography</td>
+                            <td>4590</td>
+                            <td style="color: red;">328,000,000</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td >Fujifilm</td>
+                            <td>444</td>
+                            <td style="color: red;">8,000,000</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td >Ricol</td>
+                            <td>300</td>
+                            <td style="color: red;">7,000,000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-6" style="padding-bottom: 11px;     margin-top: -118px; ">
+                <ngx-charts-pie-chart [results]="productSales" [view]="view1" [scheme]="colorScheme1"
+                    [gradient]="gradient" [legendPosition]="legendPosition" [legendTitle]="legendTitle"
+                    [labels]="showLabels" [doughnut]="isDoughnut" (select)="onSelect($event)"
+                    (activate)="onActivate($event)" (deactivate)="onDeactivate($event)">
+                </ngx-charts-pie-chart>
+            </div>
+            
+        </div>
     </div>
-  </div>
 </div>
